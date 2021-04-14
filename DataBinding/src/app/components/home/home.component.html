@@ -1,0 +1,28 @@
+<h2>这是一个Home组件
+</h2>
+{{msg}}
+<br>
+<br>
+<button (click)='getMsg()'>执行方法</button>
+
+<hr>
+<br><br>
+{{username}}
+<br>
+<br>
+<button (click)="setUserName()">Change</button>
+<br><br><br>
+<!-- ngIf使用 -->
+<hr>
+<br><br>
+<p *ngIf="flag">如果flag为true显示</p>
+<br>
+<button (click)="flag=!flag">改变Flag</button>
+
+<hr>
+<input type="text" (keyup)='keyupFun($event)'>
+
+<br><br><br>
+<!-- 双向数据绑定 -->
+<input type="text" [(ngModel)]="search"/>
+{{search}}

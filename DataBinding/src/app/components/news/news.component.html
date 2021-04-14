@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<h2>{{title}}</h2>
+<br>
+<p>{{msg}}</p>
+<br>
+
+<!-- 绑定属性 -->
+<div id="{{id}}">这是一个div ,通过控制台可以查看id是否绑定</div>
+
+<br>
+<!-- 属性绑定的两种方式 -->
+<div title="{{msg}}">鼠标描上去看一下</div>
+<!-- 另一种属性定义的方法 -->
+<div [title]="msg">鼠标描上去看一下</div>
+
+
+<!-- 绑定后台html数据 -->
+<br><br>
+{{h}}
+<br>
+<!-- 解析HTML数据 -->
+<span [innerHTML]="h"></span>
+
+<!-- 获取对象属性 -->
+<p>{{obj.name}}</p>
+
+
+<!-- 数据循环，只需要的数据的方式 -->
+<ul>
+  <li *ngFor="let item of list">
+    {{item}}
+  </li>
+</ul>
+
+<!-- 数据循环，存在索引 -->
+<ul>
+  <li *ngFor="let item of list2;let key= index">
+    {{key+1}}----{{item}}
+  </li>
+</ul>
+
+<!-- 对象数组的循环 -->
+<ul>
+  <li *ngFor="let item of list3;let key= index">
+    {{key+1}}----{{item.title}}
+  </li>
+</ul>
+
+<!-- 对象中含有列表的数组的循环 -->
+<ul>
+  <li *ngFor="let item of list4;let key =index">
+    {{key+1}}----{{item.carName}}
+    <ol>
+      <li *ngFor="let car of item.categories">
+        --{{car.category}}
+      </li>
+    </ol>
+  </li>
+</ul>
